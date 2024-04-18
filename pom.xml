@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>Jakarta-JO</artifactId>
+	<artifactId>jakarta-jo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Jakarta-JO</name>
+	<name>jakarta-jo</name>
 	<description>Projet Jakarta</description>
 	<properties>
 		<java.version>17</java.version>
