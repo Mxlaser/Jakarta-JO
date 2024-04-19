@@ -1,7 +1,7 @@
 package fr.efrei.jakartajo.dto;
 
-
-import jakarta.validation
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 public class CreateUtilisateur {
 

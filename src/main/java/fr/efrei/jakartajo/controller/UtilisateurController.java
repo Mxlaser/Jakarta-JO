@@ -4,18 +4,13 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import fr.efrei.jakartajo.dto.CreateUtilisateur;
+import fr.efrei.jakartajo.dto.UpdateUtilisateur;
 import fr.efrei.jakartajo.model.Utilisateur;
 import fr.efrei.jakartajo.service.UtilisateurService;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/utilisateurs")
@@ -38,6 +33,7 @@ public class UtilisateurController {
         if(utilisateur != null){
             return new ResponseEntity<>(service.findUtilisateurById(id), HttpStatus.OK);
         }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND)
         
     }
     @PostMapping
@@ -72,7 +68,5 @@ public class UtilisateurController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-            }
-    
-
+    }
 }
