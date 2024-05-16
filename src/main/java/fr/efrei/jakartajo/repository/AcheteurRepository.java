@@ -10,7 +10,7 @@ import fr.efrei.jakartajo.model.Acheteur;
 
 @Repository
 public interface AcheteurRepository extends JpaRepository<Acheteur, String> {
-    List<Acheteur> findAll();
+    List<Acheteur> findAllByDeletedAtNull();
 
     Optional<Acheteur> findOneByUuid(String uuid);
 
