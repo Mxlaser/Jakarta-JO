@@ -15,7 +15,7 @@ public class CreateAcheteur {
         return name;
     }
 
-    public String getFirsname(){
+    public String getFirsName(){
         return firstName;
     }
 
