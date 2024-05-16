@@ -34,7 +34,7 @@ public class AcheteurService {
 
     @Transactional
     public boolean delete(String uuid) {
-        Acheteur acheteurASupprimer = findAcheteursById(uuid);
+        Acheteur acheteurASupprimer = findAcheteurById(uuid);
         if (acheteurASupprimer != null && acheteurASupprimer.getDeletedAt() == null) {
             acheteurASupprimer.setDeletedAt(LocalDateTime.now());
             repository.save(acheteurASupprimer);
