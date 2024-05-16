@@ -59,7 +59,7 @@ public class AcheteurController {
 		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	}
 
-	@PutMapping("/uuid")
+	@PutMapping("/{uuid}")
 	public ResponseEntity<?> mettreAJourTotalement(
 			@PathVariable String uuid,
 			@RequestBody UpdateAcheteur acheteur) {
