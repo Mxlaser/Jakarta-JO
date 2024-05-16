@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import fr.efrei.jakartajo.dto.CreateAcheteur;
 import fr.efrei.jakartajo.model.Acheteur;
 import fr.efrei.jakartajo.repository.AcheteurRepository;
 import jakarta.transaction.Transactional;
@@ -27,7 +28,7 @@ public class AcheteurService {
         return repository.findOneByUuid(uuid).orElse(null);
     }
 
-    public Acheteur create(Acheteur acheteur) {
+    public Acheteur create(CreateAcheteur acheteur) {
         Acheteur acheteurACreer = new Acheteur(
                 acheteur.getName(),
                 acheteur.getFirstName());
@@ -40,6 +41,34 @@ public class AcheteurService {
         if (acheteurASupprimer != null && acheteurASupprimer.getDeletedAt() == null) {
             acheteurASupprimer.setDeletedAt(LocalDateTime.now());
             repository.save(acheteurASupprimer);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean update(String uuid, UpdateAcheteur acheteur) {
+        Acheteur studentAModifier = findAcheteurById(uuid);
+
+        if (acheteurAModifier != null) {
+            acheteurAModifier.setFirstname(acheteur.getFirstName());
+            acheteurAModifier.setName(acheteur.getName());
+            repository.save(acheteurAModifier);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean updatePartielle(String uuid, UpdateAcheteur acheteur) {
+        Acheteur acheteurAModifier = findAcheteurById(uuid);
+
+        if (acheteurAModifier != null) {
+            if (!acheteur.getFirstName().isEmpty()) {
+                acheteurAModifier.setFirstName(acheteur.getFirstName());
+            }
+            if (!acheteur.getName().isEmpty()) {
+                acheteurAModifier.setName(acheteur.getName());
+            }
+            repository.save(acheteurAModifier);
             return true;
         }
         return false;
