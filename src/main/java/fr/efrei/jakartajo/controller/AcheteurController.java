@@ -28,7 +28,7 @@ public class AcheteurController {
 
 	@GetMapping
 	public ResponseEntity<List<Acheteur>> findAll() {
-		return new ResponseEntity<>(service.findAllAcheteur(), HttpStatus.OK);
+		return new ResponseEntity<>(service.findAllAcheteurs(), HttpStatus.OK);
 	}
 
 	@GetMapping("/{uuid}")
@@ -36,21 +36,6 @@ public class AcheteurController {
 		Acheteur student = service.findAcheteurById(uuid);
 		if (student != null) {
 			return new ResponseEntity<>(service.findAcheteurById(uuid), HttpStatus.OK);
-		}
-		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-	}
-
-	@PostMapping
-	public ResponseEntity<Acheteur> save(@RequestBody Acheteur acheteur) {
-		Acheteur createdAcheteur = service.create(acheteur);
-		return new ResponseEntity<>(createdAcheteur, HttpStatus.CREATED);
-	}
-
-	@DeleteMapping("/{uuid}")
-	public ResponseEntity<?> delete(@PathVariable String uuid) {
-		boolean isDeleted = service.delete(uuid);
-		if (isDeleted) {
-			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	}
