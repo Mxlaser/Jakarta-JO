@@ -14,7 +14,7 @@ public interface AcheteurRepository extends JpaRepository<Acheteur, String> {
 
     Optional<Acheteur> findOneByUuid(String uuid);
 
-    Acheteur save(Acheteur student);
+    Acheteur save(Acheteur acheteur);
 
 	void deleteByUuid(String uuid);
 }

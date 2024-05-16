@@ -33,8 +33,8 @@ public class AcheteurController {
 
 	@GetMapping("/{uuid}")
 	public ResponseEntity<Acheteur> findOneById(@PathVariable String uuid) {
-		Acheteur student = service.findAcheteurById(uuid);
-		if (student != null) {
+		Acheteur acheteur = service.findAcheteurById(uuid);
+		if (acheteur != null) {
 			return new ResponseEntity<>(service.findAcheteurById(uuid), HttpStatus.OK);
 		}
 		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
