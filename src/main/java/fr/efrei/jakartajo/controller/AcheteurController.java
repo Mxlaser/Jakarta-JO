@@ -1,5 +1,6 @@
 package fr.efrei.jakartajo.controller;
 
+import fr.efrei.jakartajo.dto.CreateAcheteur;
 import fr.efrei.jakartajo.dto.UpdateAcheteur;
 import fr.efrei.jakartajo.model.Acheteur;
 import fr.efrei.jakartajo.service.AcheteurService;
@@ -44,7 +45,7 @@ public class AcheteurController {
 	}
 
 	@PostMapping
-	public ResponseEntity<Acheteur> save(@RequestBody Acheteur acheteur) {
+	public ResponseEntity<Acheteur> save(@RequestBody CreateAcheteur acheteur) {
 		Acheteur createdAcheteur = service.create(acheteur);
 		return new ResponseEntity<>(createdAcheteur, HttpStatus.CREATED);
 	}
@@ -63,7 +64,7 @@ public class AcheteurController {
 			@PathVariable String uuid,
 			@RequestBody UpdateAcheteur acheteur) {
 		boolean isUpdated = service.update(uuid, acheteur);
-		if(isUpdated) {
+		if (isUpdated) {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -74,7 +75,7 @@ public class AcheteurController {
 			@PathVariable String uuid,
 			@RequestBody UpdateAcheteur acheteur) {
 		boolean isUpdated = service.updatePartielle(uuid, acheteur);
-		if(isUpdated) {
+		if (isUpdated) {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 		return new ResponseEntity<>(HttpStatus.NOT_FOUND);

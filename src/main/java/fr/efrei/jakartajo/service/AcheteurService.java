@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.efrei.jakartajo.dto.CreateAcheteur;
+import fr.efrei.jakartajo.dto.UpdateAcheteur;
 import fr.efrei.jakartajo.model.Acheteur;
 import fr.efrei.jakartajo.repository.AcheteurRepository;
 import jakarta.transaction.Transactional;
@@ -47,10 +48,10 @@ public class AcheteurService {
     }
 
     public boolean update(String uuid, UpdateAcheteur acheteur) {
-        Acheteur studentAModifier = findAcheteurById(uuid);
+        Acheteur acheteurAModifier = findAcheteurById(uuid);
 
         if (acheteurAModifier != null) {
-            acheteurAModifier.setFirstname(acheteur.getFirstName());
+            acheteurAModifier.setFirstName(acheteur.getFirstName());
             acheteurAModifier.setName(acheteur.getName());
             repository.save(acheteurAModifier);
             return true;

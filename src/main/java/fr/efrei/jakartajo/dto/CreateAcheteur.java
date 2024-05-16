@@ -6,16 +6,16 @@ public class CreateAcheteur {
 
     private String firstName;
 
-    public CreateAcheteur(String name, String firstName){
+    public CreateAcheteur(String name, String firstName) {
         this.name = name;
         this.firstName = firstName;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public String getFirsName(){
+    public String getFirstName() {
         return firstName;
     }
 
