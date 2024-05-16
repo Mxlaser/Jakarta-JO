@@ -39,4 +39,19 @@ public class AcheteurController {
 		}
 		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	}
+
+	@PostMapping
+	public ResponseEntity<Acheteur> save(@RequestBody Acheteur acheteur) {
+		Acheteur createdStudent = service.create(acheteur);
+		return new ResponseEntity<>(createdStudent, HttpStatus.CREATED);
+	}
+
+	@DeleteMapping("/{uuid}")
+	public ResponseEntity<?> delete(@PathVariable String uuid) {
+		boolean isDeleted = service.delete(uuid);
+		if(isDeleted) {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+	}
 }
