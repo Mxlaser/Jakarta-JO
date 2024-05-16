@@ -10,6 +10,11 @@ public class Billet {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String uuid;
+
+    @ManyToOne
+    @JoinColumn(name = "acheteur_id")
+    private Acheteur acheteur;
+
     private String name;
     private Float price;
     private LocalDateTime createdAt = null;
