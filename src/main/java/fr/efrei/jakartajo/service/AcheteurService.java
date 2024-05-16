@@ -20,8 +20,7 @@ public class AcheteurService {
     }
 
     public List<Acheteur> findAllAcheteurs() {
-        System.out.println("Trouvé");
-        return repository.findAll();
+        return repository.findAllByDeletedAtNull();
     }
 
     public Acheteur findAcheteurById(String uuid) {
@@ -29,7 +28,10 @@ public class AcheteurService {
     }
 
     public Acheteur create(Acheteur acheteur) {
-        return repository.save(acheteur);
+        Acheteur acheteurACreer = new Acheteur(
+                acheteur.getName(),
+                acheteur.getFirstName());
+        return repository.save(acheteurACreer);
     }
 
     @Transactional
