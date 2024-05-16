@@ -1,7 +1,7 @@
 package fr.efrei.jakartajo.controller;
 
 import fr.efrei.jakartajo.model.Acheteur;
-import fr.efrei.jakartajo.service.AcheteurService;;
+import fr.efrei.jakartajo.service.AcheteurService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/students")
+@RequestMapping("/acheteurs")
 public class AcheteurController {
 
 	private final AcheteurService service;
@@ -34,25 +34,24 @@ public class AcheteurController {
 	@GetMapping("/{uuid}")
 	public ResponseEntity<Acheteur> findOneById(@PathVariable String uuid) {
 		Acheteur student = service.findAcheteurById(uuid);
-		if(student != null) {
+		if (student != null) {
 			return new ResponseEntity<>(service.findAcheteurById(uuid), HttpStatus.OK);
 		}
 		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	}
 
 	@PostMapping
-	public ResponseEntity<Acheteur> save(@RequestBody Acheteur acheteur){
+	public ResponseEntity<Acheteur> save(@RequestBody Acheteur acheteur) {
 		Acheteur createdAcheteur = service.create(acheteur);
 		return new ResponseEntity<>(createdAcheteur, HttpStatus.CREATED);
 	}
 
 	@DeleteMapping("/{uuid}")
-	public ResponseEntity<?> delete(@PathVariable String uuid){
+	public ResponseEntity<?> delete(@PathVariable String uuid) {
 		boolean isDeleted = service.delete(uuid);
-		if(isDeleted){
-		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		if (isDeleted) {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	}
 }
-
