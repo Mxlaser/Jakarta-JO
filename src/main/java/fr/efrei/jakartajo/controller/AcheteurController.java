@@ -42,8 +42,8 @@ public class AcheteurController {
 
 	@PostMapping
 	public ResponseEntity<Acheteur> save(@RequestBody Acheteur acheteur) {
-		Acheteur createdStudent = service.create(acheteur);
-		return new ResponseEntity<>(createdStudent, HttpStatus.CREATED);
+		Acheteur createdAcheteur = service.create(acheteur);
+		return new ResponseEntity<>(createdAcheteur, HttpStatus.CREATED);
 	}
 
 	@DeleteMapping("/{uuid}")
