@@ -49,7 +49,7 @@ public class AcheteurController {
 	@DeleteMapping("/{uuid}")
 	public ResponseEntity<?> delete(@PathVariable String uuid) {
 		boolean isDeleted = service.delete(uuid);
-		if(isDeleted) {
+		if (isDeleted) {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
