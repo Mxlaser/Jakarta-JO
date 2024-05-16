@@ -17,7 +17,7 @@ public class AcheteurService {
         this.repository = repository;
     }
 
-    public List<Acheteur> findAcheteurs() {
+    public List<Acheteur> findAllAcheteurs() {
         System.out.println("Trouvé");
         return repository.findAll();
     }
