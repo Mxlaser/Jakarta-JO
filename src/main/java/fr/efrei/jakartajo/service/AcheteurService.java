@@ -22,7 +22,7 @@ public class AcheteurService {
         return repository.findAll();
     }
 
-    public Acheteur findAcheteurById(string uuid) {
+    public Acheteur findAcheteurById(String uuid) {
         return repository.findOneByUuid(uuid).orElse(null);
     }
 }
