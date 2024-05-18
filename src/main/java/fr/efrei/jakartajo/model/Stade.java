@@ -8,6 +8,9 @@ import jakarta.persistence.*;
     public class Stade {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+
+  
+
     private String uuid;
     private String name;
     private String adresse;

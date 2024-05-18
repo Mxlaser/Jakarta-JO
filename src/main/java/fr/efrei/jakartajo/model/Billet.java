@@ -17,7 +17,6 @@ public class Billet {
 
     private String name;
     private Float price;
-    private LocalDateTime createdAt = null;
     private LocalDateTime deletedAt = null;
 
     public Billet() {
@@ -47,14 +46,6 @@ public class Billet {
 
     public String getUuid() {
         return uuid;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
     }
 
     public LocalDateTime getDeletedAt() {
