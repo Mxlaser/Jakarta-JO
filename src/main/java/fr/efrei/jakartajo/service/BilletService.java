@@ -9,6 +9,4 @@ import fr.efrei.jakartajo.repository.BilletRepository;
 public class BilletService {
     private final BilletRepository repository;
 
-    @Autowired
-
 }

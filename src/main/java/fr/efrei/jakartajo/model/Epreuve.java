@@ -17,8 +17,9 @@ public class Epreuve {
 
     }
 
-    public Epreuve(String name){
+    public Epreuve(String name, LocalDateTime dateEpreuve){
         this.name = name;
+        this.dateEpreuve = dateEpreuve;
     }
 
     public String getName() {
