@@ -15,6 +15,10 @@ public class Billet {
     @JoinColumn(name = "acheteur_id")
     private Acheteur acheteur;
 
+    @ManyToOne
+    @JoinColumn(name = "epreuve_id")
+    private Epreuve epreuve;
+
     private String name;
     private Float price;
     private LocalDateTime deletedAt = null;
@@ -54,5 +58,21 @@ public class Billet {
 
     public void setDeletedAt(LocalDateTime deletedAt) {
         this.deletedAt = deletedAt;
+    }
+
+    public Acheteur getAcheteur() {
+        return acheteur;
+    }
+
+    public void setAcheteur(Acheteur acheteur) {
+        this.acheteur = acheteur;
+    }
+
+    public Epreuve getEpreuve() {
+        return epreuve;
+    }
+
+    public void setEpreuve(Epreuve epreuve) {
+        this.epreuve = epreuve;
     }
 }

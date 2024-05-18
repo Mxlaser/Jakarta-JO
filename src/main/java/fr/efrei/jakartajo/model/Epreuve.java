@@ -1,6 +1,7 @@
 package fr.efrei.jakartajo.model;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import jakarta.persistence.*;
 
@@ -13,8 +14,10 @@ public class Epreuve {
     private LocalDateTime dateEpreuve = null;
     private LocalDateTime deletedAt = null;
 
-    public Epreuve(){
+    @OneToMany(mappedBy = "epreuve")
+    private List<Billet> billets;
 
+    public Epreuve(){
     }
 
     public Epreuve(String name, LocalDateTime dateEpreuve){
@@ -48,5 +51,13 @@ public class Epreuve {
 
     public void setDeletedAt(LocalDateTime deletedAt) {
         this.deletedAt = deletedAt;
+    }
+
+    public List<Billet> getBillets() {
+        return billets;
+    }
+
+    public void setBillets(List<Billet> billets) {
+        this.billets = billets;
     }
 }
