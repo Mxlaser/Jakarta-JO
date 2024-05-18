@@ -3,6 +3,7 @@ package fr.efrei.jakartajo.dto;
 public class UpdateAcheteur {
     
     private String name;
+	
     private String firstName;
 
     public UpdateAcheteur(String name, String firstName) {
