@@ -66,7 +66,7 @@ public class BilletService {
             if (!billet.getName().isEmpty()) {
                 billetAModifier.setName(billet.getName());
             }
-            if (billet.getPrice()!=null) {
+            if (billet.getPrice() != null) {
                 billetAModifier.setPrice(billet.getPrice());
             }
             repository.save(billetAModifier);
@@ -74,6 +74,5 @@ public class BilletService {
         }
         return false;
     }
-
 
 }
