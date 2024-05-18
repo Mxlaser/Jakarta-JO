@@ -1,5 +1,7 @@
 package fr.efrei.jakartajo.model;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -9,6 +11,7 @@ import jakarta.persistence.*;
     private String uuid;
     private String name;
     private String adresse;
+    private LocalDateTime deletedAt = null;
 
     public Stade(){
 
@@ -37,6 +40,14 @@ import jakarta.persistence.*;
 
     public String getUuid() {
         return uuid;
+    }
+
+    public LocalDateTime getDeletedAt() {
+        return deletedAt;
+    }
+
+    public void setDeletedAt(LocalDateTime deletedAt) {
+        this.deletedAt = deletedAt;
     }
 }
 
