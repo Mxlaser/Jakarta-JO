@@ -20,11 +20,11 @@ public class Billet {
     private LocalDateTime createdAt = null;
     private LocalDateTime deletedAt = null;
 
-    public Billet(){
+    public Billet() {
 
     }
 
-    public Billet(String name, Float price){
+    public Billet(String name, Float price) {
         this.name = name;
         this.price = price;
     }
