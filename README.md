@@ -1,5 +1,4 @@
-# Projet Jakarta-Jo
-**BELLANGER.N, ZIVKOVIC.N**
+# Projet Jakarta-Jo - *Bellanger.N, Zivkovic.N*
 
 ## Acheteur 
 **Créer un acheteur**
