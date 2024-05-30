@@ -5,48 +5,48 @@ ZIVKOVIC Nikola
 
 Acheteur
   Créer un acheteur
-    POST /acheteurs
+    POST /api/acheteurs
     Body: { "name": "Til", "firstname": "Jean" }
   Lire un acheteur
-    GET /acheteurs/{uuid}
+    GET /api/acheteurs/{uuid}
   Mettre à jour un acheteur
-    PUT /acheteurs/{uuid}
+    PUT /api/acheteurs/{uuid}
     Body: { "name": "Til", "firstname": "Jean" }
   Supprimer un acheteur
-    DELETE /acheteurs/{id}
+    DELETE /api/acheteurs/{id}
 
 Billet
   Créer un billet
-    POST /billets
+    POST /api/billets
     Body: { "name": "Jean", "price": 49.99 }
   Lire un billet
-    GET /billets/{uuid}
+    GET /api/billets/{uuid}
   Mettre à jour un billet
-    PUT /billets/{uuid}
+    PUT /api/billets/{uuid}
     Body: { "name": "Jean", "price": 49.99 }
   Supprimer un billet
-    DELETE /billets/{uuid}
+    DELETE /api/billets/{uuid}
 
 Epreuve
   Créer une épreuve
-    POST /epreuves
+    POST /api/epreuves
     Body: { "name": "Finale 100m", "dateEpreuve": "20204-12-05T12:00:00.00" }
   Lire une épreuve
-    GET /epreuves/{uuid}
+    GET /api/epreuves/{uuid}
   Mettre à jour une épreuve
-    PUT /epreuves/{id}
+    PUT /api/epreuves/{id}
     Body: { "name": "Finale 100m", "dateEpreuve": "20204-12-05T12:00:00.00" }
   Supprimer une épreuve
-    DELETE /epreuves/{uuid}
+    DELETE /api/epreuves/{uuid}
 
 Stade
   Créer un stade
-    POST /stades
+    POST /api/stades
     Body: { "name": "Stade de France", "adresse": "Saint-Denis" }
   Lire un stade
-    GET /stades/{uuid}
+    GET /api/stades/{uuid}
   Mettre à jour un stade
-    PUT /stades/{uuid}
+    PUT /api/stades/{uuid}
     Body: { "name": "Stade de France", "adresse": "Saint-Denis" }
   Supprimer un stade
-    DELETE /stades/{uuid}
+    DELETE /api/stades/{uuid}
